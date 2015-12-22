@@ -12,6 +12,20 @@
 		9393A7911C2811F400209911 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9393A7901C2811F400209911 /* ProductListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9393A7951C2813B100209911 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9393A7941C2813B100209911 /* ProductListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9393A7971C29598900209911 /* OneProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9393A7961C29598900209911 /* OneProductViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9393A7A71C29985700209911 /* asian_chicken_salad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A7991C29985700209911 /* asian_chicken_salad.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7A81C29985700209911 /* cake.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A79A1C29985700209911 /* cake.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7A91C29985700209911 /* carrot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A79B1C29985700209911 /* carrot.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7AA1C29985700209911 /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A79C1C29985700209911 /* coffee.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7AB1C29985700209911 /* cookies.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A79D1C29985700209911 /* cookies.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7AC1C29985700209911 /* flag_of_japan.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A79E1C29985700209911 /* flag_of_japan.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7AD1C29985700209911 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A79F1C29985700209911 /* food.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7AE1C29985700209911 /* french_fries.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A7A01C29985700209911 /* french_fries.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7AF1C29985700209911 /* meat.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A7A11C29985700209911 /* meat.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7B01C29985700209911 /* pizza_slice.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A7A21C29985700209911 /* pizza_slice.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7B11C29985700209911 /* sup.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A7A31C29985700209911 /* sup.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7B21C29985700209911 /* sushi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A7A41C29985700209911 /* sushi.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7B31C29985700209911 /* toast.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A7A51C29985700209911 /* toast.png */; settings = {ASSET_TAGS = (); }; };
+		9393A7B41C29985700209911 /* trash_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393A7A61C29985700209911 /* trash_empty.png */; settings = {ASSET_TAGS = (); }; };
 		93D1564F1C1EE6DA0071A9DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1564E1C1EE6DA0071A9DB /* AppDelegate.swift */; };
 		93D156541C1EE6DA0071A9DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D156521C1EE6DA0071A9DB /* Main.storyboard */; };
 		93D156561C1EE6DA0071A9DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D156551C1EE6DA0071A9DB /* Assets.xcassets */; };
@@ -32,6 +46,20 @@
 		9393A7901C2811F400209911 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
 		9393A7941C2813B100209911 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		9393A7961C29598900209911 /* OneProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneProductViewController.swift; sourceTree = "<group>"; };
+		9393A7991C29985700209911 /* asian_chicken_salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asian_chicken_salad.png; sourceTree = "<group>"; };
+		9393A79A1C29985700209911 /* cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cake.png; sourceTree = "<group>"; };
+		9393A79B1C29985700209911 /* carrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrot.png; sourceTree = "<group>"; };
+		9393A79C1C29985700209911 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
+		9393A79D1C29985700209911 /* cookies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cookies.png; sourceTree = "<group>"; };
+		9393A79E1C29985700209911 /* flag_of_japan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag_of_japan.png; sourceTree = "<group>"; };
+		9393A79F1C29985700209911 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
+		9393A7A01C29985700209911 /* french_fries.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = french_fries.png; sourceTree = "<group>"; };
+		9393A7A11C29985700209911 /* meat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meat.png; sourceTree = "<group>"; };
+		9393A7A21C29985700209911 /* pizza_slice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza_slice.png; sourceTree = "<group>"; };
+		9393A7A31C29985700209911 /* sup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sup.png; sourceTree = "<group>"; };
+		9393A7A41C29985700209911 /* sushi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sushi.png; sourceTree = "<group>"; };
+		9393A7A51C29985700209911 /* toast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toast.png; sourceTree = "<group>"; };
+		9393A7A61C29985700209911 /* trash_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash_empty.png; sourceTree = "<group>"; };
 		93D1564B1C1EE6DA0071A9DB /* FoodShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D1564E1C1EE6DA0071A9DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93D156531C1EE6DA0071A9DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +93,27 @@
 				1FE4A976992F6E5D411753CA /* Pods-FoodShop.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9393A7981C29984200209911 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				9393A7991C29985700209911 /* asian_chicken_salad.png */,
+				9393A79A1C29985700209911 /* cake.png */,
+				9393A79B1C29985700209911 /* carrot.png */,
+				9393A79C1C29985700209911 /* coffee.png */,
+				9393A79D1C29985700209911 /* cookies.png */,
+				9393A79E1C29985700209911 /* flag_of_japan.png */,
+				9393A79F1C29985700209911 /* food.png */,
+				9393A7A01C29985700209911 /* french_fries.png */,
+				9393A7A11C29985700209911 /* meat.png */,
+				9393A7A21C29985700209911 /* pizza_slice.png */,
+				9393A7A31C29985700209911 /* sup.png */,
+				9393A7A41C29985700209911 /* sushi.png */,
+				9393A7A51C29985700209911 /* toast.png */,
+				9393A7A61C29985700209911 /* trash_empty.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 		93D156421C1EE6DA0071A9DB = {
@@ -135,6 +184,7 @@
 				93D156571C1EE6DA0071A9DB /* LaunchScreen.storyboard */,
 				93D156551C1EE6DA0071A9DB /* Assets.xcassets */,
 				93D1565A1C1EE6DA0071A9DB /* Info.plist */,
+				9393A7981C29984200209911 /* icons */,
 			);
 			name = Resourses;
 			sourceTree = "<group>";
@@ -208,8 +258,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9393A7AA1C29985700209911 /* coffee.png in Resources */,
+				9393A7AD1C29985700209911 /* food.png in Resources */,
+				9393A7AF1C29985700209911 /* meat.png in Resources */,
+				9393A7B01C29985700209911 /* pizza_slice.png in Resources */,
+				9393A7B21C29985700209911 /* sushi.png in Resources */,
 				93D156591C1EE6DA0071A9DB /* LaunchScreen.storyboard in Resources */,
+				9393A7A81C29985700209911 /* cake.png in Resources */,
+				9393A7B31C29985700209911 /* toast.png in Resources */,
+				9393A7B11C29985700209911 /* sup.png in Resources */,
+				9393A7AC1C29985700209911 /* flag_of_japan.png in Resources */,
+				9393A7AE1C29985700209911 /* french_fries.png in Resources */,
+				9393A7B41C29985700209911 /* trash_empty.png in Resources */,
+				9393A7AB1C29985700209911 /* cookies.png in Resources */,
+				9393A7A91C29985700209911 /* carrot.png in Resources */,
 				93D156561C1EE6DA0071A9DB /* Assets.xcassets in Resources */,
+				9393A7A71C29985700209911 /* asian_chicken_salad.png in Resources */,
 				93D156541C1EE6DA0071A9DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

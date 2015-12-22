@@ -10,100 +10,79 @@ import UIKit
 import AEXML
 
 class ServiceManager: NSObject {
+    var dict1 = [String:String]()
+    var CategoryArray1 = [FoodCategory]()
+    var OfferArray1 = [FoodOffer]()
+    var result1 = Array<FoodCategory>()
+    var imageLoading = UIImage()
     
-    //------------------------------------
-    
-     func asynchronousWork(completion: (inner: () throws -> NSDictionary) -> Void) -> Void {
+    func asynchronousWorkLoading(completion: (inner: () throws -> [FoodCategory]) -> Void) -> Void {
         let queue = NSOperationQueue()
-        let request: NSURLRequest = NSURLRequest(URL: Constants.baseUrl!)
-
+        let request: NSURLRequest = NSURLRequest(URL: Constants.baseUrl!)        
         NSURLConnection.sendAsynchronousRequest(request, queue: queue) {
             (response, data, error) -> Void in
             guard let data = data else { return }
             do {
-                let result = try NSJSONSerialization.JSONObjectWithData(data, options: [])
-                    as! NSDictionary
-                print(result)
-                completion(inner: {return result})
-            } catch let error {
-                completion(inner: {throw error})
-            }
-        }
-    }
-    
-    
-    
-    
-    //------------------------------------
- 
-    
-     static func loadCategory (pageNumber:UInt, completionHandler: ([FoodCategory], NSError?) -> Void) {
-        
-        print("Start parsing!")
-        
-        var dict = [String:String]()
-        var CategoryArray = [FoodCategory]()
-        var OfferArray = [FoodOffer]()
-
-        let task = NSURLSession.sharedSession().dataTaskWithURL(Constants.baseUrl!) { data, response, error in
-            if error != nil {
-                print(error)
-                completionHandler([], error)
-                return
-            }
-            do {
-                let xmlDoc = try AEXMLDocument(xmlData: data!)
-                print ("Спарсилось:")
-                
-               // print(xmlDoc.xmlString)
-              
+                let resultX = NSURLSession.sharedSession().dataTaskWithURL(Constants.baseUrl!)
+                let xmlDoc = try AEXMLDocument(xmlData: data)
                 //MARK - парсим категории (ID/имена)
                 for categoryParam in xmlDoc.root["shop"]["categories"]["category"].all! {
-                    
                     let name = categoryParam.value!
                     let id = Int (categoryParam.attributes["id"]!)!
                     let category = FoodCategory.init(ID: id, name: name)
-                    CategoryArray.append(category)
+                    self.CategoryArray1.append(category)
+                    self.result1.append(category)
                     print(name,id)
                 }
-                
                 //MARK - парсим товары
                 for offerParam in xmlDoc.root["shop"]["offers"]["offer"].all! {
-                let id = offerParam.attributes["id"]!
-                    dict["id"] = id
+                    let id = offerParam.attributes["id"]!
+                    self.dict1["id"] = id
                     for param in offerParam.children{
                         let weight = param.attributes
                         let trueWeight = weight["name"]
                         let name = param.name
                         let value = param.value ?? ""
                         switch name {
-                            case "name": dict["name"] = value
-                            case "param" where trueWeight=="Вес": dict["weight"] = param.stringValue
-                            case "categoryId": dict["categoryId"] = value
-                            case "picture": dict["picture"] = value
-                            case "price": dict["price"] = value
-                            case "description": dict["description"] = value
+                        case "name": self.dict1["name"] = value
+                        case "param" where trueWeight=="Вес": self.dict1["weight"] = param.stringValue
+                        case "categoryId": self.dict1["categoryId"] = value
+                        case "picture": self.dict1["picture"] = value
+                        case "price": self.dict1["price"] = value
+                        case "description": self.dict1["description"] = value
                         default :break
                         }
                     }
                     //print("Dict - \(dict)")
-                    let products = FoodOffer.init(ID: Int(dict["id"]!)!, categoryID: Int(dict["categoryId"]!)!, name: dict["name"]!, price: dict["price"]!, offerDescription: dict["description"]!, weight: dict["weight"]!, picture: dict["picture"]!)
-                    OfferArray.append(products)
-//                    print("Тест - ID:\(products.ID) categoryID:\(products.categoryID) name: \(products.name) price: \(products.price) Desc: \(products.offerDescription) weight:\(products.weight) picture: \(products.picture)")
+                    let products = FoodOffer.init(ID: Int(self.dict1["id"]!)!, categoryID: Int(self.dict1["categoryId"]!)!, name: self.dict1["name"]!, price: self.dict1["price"]!, offerDescription: self.dict1["description"]!, weight: self.dict1["weight"]!, picture: self.dict1["picture"]!)
+                    self.OfferArray1.append(products)
+                }
+               // print(self.result1)
+                completion(inner: {return self.result1})
+            } catch let error {
+                completion(inner: {throw error})
+            }
+        }
+    }
+    
+    static func imageFromUrl(urlString: String)->UIImage{
+            var imageToLoad = UIImage()
+        if let url = NSURL(string: urlString) {
+            let request = NSURLRequest(URL: url)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                dispatch_async(dispatch_get_main_queue()) {
+                var image = UIImage(data:data!)!
+                    imageToLoad = image
+                    print("Img \(image)")
                 }
             }
-            catch {
-                print("\(error)")
-            }
-            print("--------------------------------")
-            print("Всего категорий спарсилось:\(CategoryArray.count)")
-            print("Всего товаров спарсилось:\(OfferArray.count)")
-            print("--------------------------------")
         }
-        task.resume()
-        completionHandler(CategoryArray, nil)
-        
+        print("return \(imageToLoad)")
+         return imageToLoad
+    }
 }
-}
+
+
 
         

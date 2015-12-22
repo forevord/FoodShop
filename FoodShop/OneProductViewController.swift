@@ -15,11 +15,11 @@ class OneProductViewController: UIViewController {
     @IBOutlet weak var oneProductWeight: UILabel!
     @IBOutlet weak var oneProductCost: UILabel!
     
-    var oProductImage = ""
-    var oProductTitle = ""
-    var oProductDescription = ""
-    var oProductWeight = ""
-    var oProductCost = ""
+        var oProductImage = ""
+        var oProductTitle = ""
+        var oProductDescription = ""
+        var oProductWeight = ""
+        var oProductCost = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,16 @@ class OneProductViewController: UIViewController {
             oneProductDescriprion.text = oProductDescription
             oneProductWeight.text = "Вес: "+oProductWeight
             oneProductCost.text = "Цена: "+oProductCost
+        if let url = NSURL(string: oProductImage) {
+            let request = NSURLRequest(URL: url)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                dispatch_async(dispatch_get_main_queue()) {
+                    var image = UIImage(data:data!)!
+                    self.oneProductImage.image = image
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,9 +12,12 @@ class ProductListTableViewController: UITableViewController {
     var productsOfferArray = [FoodOffer]()
     var categoryIDSender = 0
     var filteredArrayOfProducts = [FoodOffer]()
+    var imageToLoad = UIImage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let servicePicture = ServiceManager()
+        self.imageToLoad = servicePicture.imageLoading
         switchIDtoLoadCategories(categoryIDSender)
     }
 
@@ -47,6 +50,25 @@ class ProductListTableViewController: UITableViewController {
             cell.productListTitle.text = product.name
             cell.productListWeight.text = product.weight
             cell.productListCost.text = product.price
+        
+        if let url = NSURL(string: product.picture) {
+            let request = NSURLRequest(URL: url)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                dispatch_async(dispatch_get_main_queue()) {
+                    var image = UIImage(data:data!)!
+                    cell.productListImage.image = image
+                }
+            }
+        }
+    
+        
+//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//            let imgUrl = NSURL(string: product.picture)
+//            let data = NSData(contentsOfURL: imgUrl!)
+//            let image = UIImage(data: data!)
+//            cell.productListImage.image = image
+//             })
         return cell
     }
 
@@ -60,7 +82,7 @@ class ProductListTableViewController: UITableViewController {
                 destination.oProductDescription = productResult.offerDescription
                 destination.oProductWeight = productResult.weight
                 destination.oProductCost = productResult.price
-                //destination.oneProductImage = categoryResult.picture
+                destination.oProductImage = productResult.picture
             }
         }
     }
