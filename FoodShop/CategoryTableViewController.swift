@@ -144,10 +144,9 @@ class CategoryTableViewController: UITableViewController {
             if let destination = segue.destinationViewController as? ProductListTableViewController {
                 let path = tableView.indexPathForSelectedRow
                 let cell = tableView.cellForRowAtIndexPath(path!)
-                //destination.textLabelProduct = (cell?.textLabel?.text!)!
                 let categoryResult = result[(path?.row)!]
-                destination.categoryIDSender = categoryResult.ID
-                destination.productsOfferArray = OfferArray
+                    destination.categoryIDSender = categoryResult.ID
+                    destination.productsOfferArray = OfferArray
                 print("Destination: \(destination.categoryIDSender)")
             }
         }

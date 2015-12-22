@@ -111,22 +111,22 @@
                                             <rect key="frame" x="8" y="0.0" width="81" height="77"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcB-c7-GFS">
-                                            <rect key="frame" x="97" y="8" width="283" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcB-c7-GFS">
+                                            <rect key="frame" x="97" y="8" width="212" height="32"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvf-Jx-aGy">
-                                            <rect key="frame" x="97" y="37" width="97" height="21"/>
+                                            <rect key="frame" x="97" y="48" width="97" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCN-cz-P7q">
-                                            <rect key="frame" x="258" y="37" width="90" height="21"/>
+                                            <rect key="frame" x="202" y="48" width="90" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -141,6 +141,7 @@
                                     <outlet property="productListImage" destination="tM5-1q-1dD" id="NKF-3m-Um2"/>
                                     <outlet property="productListTitle" destination="qcB-c7-GFS" id="J5D-J4-jQT"/>
                                     <outlet property="productListWeight" destination="vvf-Jx-aGy" id="BBK-XM-PCq"/>
+                                    <segue destination="GSX-bM-hbc" kind="show" identifier="ProductSegue" id="MXJ-BF-sUq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -156,25 +157,66 @@
             </objects>
             <point key="canvasLocation" x="1345" y="-158"/>
         </scene>
-        <!--View Controller-->
+        <!--One Product View Controller-->
         <scene sceneID="ZCd-oW-nQU">
             <objects>
-                <viewController id="GSX-bM-hbc" sceneMemberID="viewController">
+                <viewController id="GSX-bM-hbc" customClass="OneProductViewController" customModule="FoodShop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uln-1z-eJE"/>
                         <viewControllerLayoutGuide type="bottom" id="Htz-tq-mF5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pqs-ie-cvt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIU-F3-Xx6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="96"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awl-fw-BzS">
+                                <rect key="frame" x="20" y="168" width="309" height="48"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-VK-5nL">
+                                <rect key="frame" x="20" y="197" width="309" height="119"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYw-yR-vut">
+                                <rect key="frame" x="20" y="324" width="239" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxR-t4-eVB">
+                                <rect key="frame" x="20" y="353" width="245" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="oneProductCost" destination="OxR-t4-eVB" id="4LK-DU-H6u"/>
+                        <outlet property="oneProductDescriprion" destination="SCi-VK-5nL" id="BCD-bZ-fm5"/>
+                        <outlet property="oneProductImage" destination="mIU-F3-Xx6" id="mhg-z1-qUd"/>
+                        <outlet property="oneProductTitle" destination="Awl-fw-BzS" id="Dst-Th-Rmq"/>
+                        <outlet property="oneProductWeight" destination="BYw-yR-vut" id="JPT-oP-CPE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eq-lc-ydm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="-158"/>
+            <point key="canvasLocation" x="1907.5" y="-158.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K1V-eb-3Cl">
