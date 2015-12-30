@@ -62,6 +62,11 @@ class ProductListTableViewController: UITableViewController {
                         print("Pic \(image)")
                         cell.productListImage.image = image
                         self.imageDict[indexPath.row] = image
+                    if (error != nil) {
+                        cell.productListImage.image = UIImage(named:"load.png")
+                        self.imageDict[indexPath.row] = image
+                        return
+                    }
                 }
             }
         }

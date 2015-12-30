@@ -11,5 +11,6 @@ import UIKit
 class Constants: NSObject {
     
     static let baseUrl = NSURL(string:"http://ufa.farfor.ru/getyml/?key=ukAXxeJYZN")
+    static let imageLoadingNil = UIImage(named:"load.png")
 
 }

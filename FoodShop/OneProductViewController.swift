@@ -28,34 +28,9 @@ class OneProductViewController: UIViewController {
             oneProductWeight.text = "Вес: "+oProductWeight
             oneProductCost.text = "Цена: "+oProductCost
             oneProductImage.image = oProductImage
-        
-//        всё работает
-//        if let url = NSURL(string: oProductImage) {
-//            let request = NSURLRequest(URL: url)
-//            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
-//                (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-//                dispatch_async(dispatch_get_main_queue()) {
-//                    var image = UIImage(data:data!)!
-//                    self.oneProductImage.image = image
-//                }
-//            }
-//        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
