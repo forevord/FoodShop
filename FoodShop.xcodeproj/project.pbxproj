@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9373609A1C316123001AE399 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 937360991C316123001AE399 /* load.png */; settings = {ASSET_TAGS = (); }; };
+		9373609E1C316CDE001AE399 /* FoodPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9373609D1C316CDE001AE399 /* FoodPicture.swift */; settings = {ASSET_TAGS = (); }; };
 		9393A78D1C20A58100209911 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9393A78C1C20A58100209911 /* CategoryTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9393A78F1C20A97F00209911 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9393A78E1C20A97F00209911 /* CategoryTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9393A7911C2811F400209911 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9393A7901C2811F400209911 /* ProductListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		1FE4A976992F6E5D411753CA /* Pods-FoodShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodShop/Pods-FoodShop.release.xcconfig"; sourceTree = "<group>"; };
 		5E86B9058D47A7217C55DA2B /* Pods_FoodShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		937360991C316123001AE399 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
+		9373609D1C316CDE001AE399 /* FoodPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodPicture.swift; sourceTree = "<group>"; };
 		9393A78C1C20A58100209911 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		9393A78E1C20A97F00209911 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		9393A7901C2811F400209911 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 		9393A7981C29984200209911 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				937360991C316123001AE399 /* load.png */,
 				9393A7991C29985700209911 /* asian_chicken_salad.png */,
 				9393A79A1C29985700209911 /* cake.png */,
 				9393A79B1C29985700209911 /* carrot.png */,
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				93D156601C1EEA310071A9DB /* FoodCategory.swift */,
+				9373609D1C316CDE001AE399 /* FoodPicture.swift */,
 				93D156671C1EEB640071A9DB /* FoodOffer.swift */,
 				93D156691C1EEB850071A9DB /* FoodIcon.swift */,
 			);
@@ -269,6 +275,7 @@
 				9393A7B11C29985700209911 /* sup.png in Resources */,
 				9393A7AC1C29985700209911 /* flag_of_japan.png in Resources */,
 				9393A7AE1C29985700209911 /* french_fries.png in Resources */,
+				9373609A1C316123001AE399 /* load.png in Resources */,
 				9393A7B41C29985700209911 /* trash_empty.png in Resources */,
 				9393A7AB1C29985700209911 /* cookies.png in Resources */,
 				9393A7A91C29985700209911 /* carrot.png in Resources */,
@@ -341,6 +348,7 @@
 				9393A7911C2811F400209911 /* ProductListTableViewController.swift in Sources */,
 				9393A7971C29598900209911 /* OneProductViewController.swift in Sources */,
 				93D1564F1C1EE6DA0071A9DB /* AppDelegate.swift in Sources */,
+				9373609E1C316CDE001AE399 /* FoodPicture.swift in Sources */,
 				9393A7951C2813B100209911 /* ProductListTableViewCell.swift in Sources */,
 				93D1566C1C1EEBB00071A9DB /* ServiceManager.swift in Sources */,
 				9393A78F1C20A97F00209911 /* CategoryTableViewCell.swift in Sources */,

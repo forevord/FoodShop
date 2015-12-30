@@ -7,6 +7,5 @@ target 'FoodShop' do
     
     use_frameworks!
     pod 'AEXML', '~> 2.0'
-    
 end
 

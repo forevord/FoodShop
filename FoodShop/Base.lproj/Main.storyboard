@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="JFp-JU-FxI">
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="20" style="gray" id="64S-u4-dfB">
                             <rect key="frame" x="0.0" y="136" width="414" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
@@ -91,6 +91,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="txx-vO-4aT"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="activityLabel" destination="64S-u4-dfB" id="nvT-Iy-aoi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRO-Lo-VyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

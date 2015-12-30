@@ -10,14 +10,19 @@ import UIKit
 import AEXML
 
 class CategoryTableViewController: UITableViewController {
+    @IBOutlet weak var activityLabel: UIActivityIndicatorView!
     var CategoryArray = [FoodCategory]()
     var OfferArray = [FoodOffer]()
     var result = Array<FoodCategory>()
-
+    var hidesWhenStopped = true
+   
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        activityLabel.startAnimating()
+        activityLabel.hidesWhenStopped = true
         let service = ServiceManager()
         service.asynchronousWorkLoading { (inner: () throws -> [FoodCategory]) -> Void in
+            
             dispatch_async(dispatch_get_main_queue(), {
                 do {
                     let result = try inner()
@@ -52,6 +57,7 @@ class CategoryTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CategoryTableViewCell
         let category = result[indexPath.row]
+        activityLabel.stopAnimating()
         var imageCategory = FoodIcon()
         cell.titleCategory.text = category.name
         print("Картинки \(imageCategory.pictureOfCategory(category.ID))")

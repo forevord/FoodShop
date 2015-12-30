@@ -12,7 +12,8 @@ class ProductListTableViewController: UITableViewController {
     var productsOfferArray = [FoodOffer]()
     var categoryIDSender = 0
     var filteredArrayOfProducts = [FoodOffer]()
-    var imageToLoad = UIImage()
+    var imageToLoad = UIImage(named:"load.png")
+    var imageDict = [Int:UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,26 +51,22 @@ class ProductListTableViewController: UITableViewController {
             cell.productListTitle.text = product.name
             cell.productListWeight.text = product.weight
             cell.productListCost.text = product.price
+            cell.productListImage.image = UIImage(named:"load.png")
         
         if let url = NSURL(string: product.picture) {
             let request = NSURLRequest(URL: url)
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
                 (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
                 dispatch_async(dispatch_get_main_queue()) {
-                    var image = UIImage(data:data!)!
-                    cell.productListImage.image = image
+                        let image = UIImage(data:data!)!
+                        print("Pic \(image)")
+                        cell.productListImage.image = image
+                        self.imageDict[indexPath.row] = image
                 }
             }
         }
-    
-        
-//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//            let imgUrl = NSURL(string: product.picture)
-//            let data = NSData(contentsOfURL: imgUrl!)
-//            let image = UIImage(data: data!)
-//            cell.productListImage.image = image
-//             })
         return cell
+        self.tableView?.reloadData()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -78,11 +75,18 @@ class ProductListTableViewController: UITableViewController {
                 let path = tableView.indexPathForSelectedRow
                 let cell = tableView.cellForRowAtIndexPath(path!)
                 let productResult = filteredArrayOfProducts[(path?.row)!]
+                print("PicArray \(imageDict)")
+                print("Pass:\(path!.row)")
                 destination.oProductTitle = productResult.name
                 destination.oProductDescription = productResult.offerDescription
                 destination.oProductWeight = productResult.weight
                 destination.oProductCost = productResult.price
-                destination.oProductImage = productResult.picture
+                if imageDict[(path?.row)!] == nil{
+                    destination.oProductImage = UIImage(named:"load.png")
+                    self.tableView?.reloadData()
+                    return
+                }
+                destination.oProductImage = imageDict[(path?.row)!]!
             }
         }
     }
