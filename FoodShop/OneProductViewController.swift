@@ -24,6 +24,8 @@ class OneProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             oneProductTitle.text = oProductTitle
+            oneProductTitle.adjustsFontSizeToFitWidth = true
+            oneProductDescriprion.adjustsFontSizeToFitWidth = true
             oneProductDescriprion.text = oProductDescription
             oneProductWeight.text = "Вес: "+oProductWeight
             oneProductCost.text = "Цена: "+oProductCost

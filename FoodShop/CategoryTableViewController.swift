@@ -14,10 +14,18 @@ class CategoryTableViewController: UITableViewController {
     var CategoryArray = [FoodCategory]()
     var OfferArray = [FoodOffer]()
     var result = Array<FoodCategory>()
+    let titleLabel = UILabel(frame: CGRect(x: 70, y: 40, width: 200, height: 50))
     var hidesWhenStopped = true
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.registerCellNib(DataTableViewCell.self)
+        
+        titleLabel.text = "Загрузка данных..."
+        activityLabel.frame = CGRectMake(0.0, 50.0, 50.0, 200.0)
+        self.view.addSubview(activityLabel)
+        self.view.addSubview(titleLabel)
+        activityLabel.bringSubviewToFront(self.view)
         activityLabel.startAnimating()
         activityLabel.hidesWhenStopped = true
         let service = ServiceManager()
@@ -41,6 +49,15 @@ class CategoryTableViewController: UITableViewController {
         }
     }
     
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNavigationBarItem()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,6 +75,7 @@ class CategoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CategoryTableViewCell
         let category = result[indexPath.row]
         activityLabel.stopAnimating()
+        self.titleLabel.removeFromSuperview()
         var imageCategory = FoodIcon()
         cell.titleCategory.text = category.name
         print("Картинки \(imageCategory.pictureOfCategory(category.ID))")

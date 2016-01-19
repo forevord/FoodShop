@@ -24,8 +24,9 @@ class FoodIcon: NSObject {
             case 10: icoToCategory = "cake.png"
             case 18: icoToCategory = "flag_of_japan.png"
             case 20: icoToCategory = "french_fries.png"
-            case 23: icoToCategory = "carrot.png"
+            case 23: icoToCategory = "addons.png"
             case 24: icoToCategory = "meat.png"
+            case 30: icoToCategory = "snack.png"
             default: icoToCategory = "food.png"
         }
         return icoToCategory

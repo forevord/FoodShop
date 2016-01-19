@@ -7,5 +7,7 @@ target 'FoodShop' do
     
     use_frameworks!
     pod 'AEXML', '~> 2.0'
+    pod 'SlideMenuControllerSwift', '~> 2.0'
+    pod 'GoogleMaps'
 end
 

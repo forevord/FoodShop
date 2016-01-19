@@ -1,10 +1,16 @@
 PODS:
   - AEXML (2.0.1)
+  - GoogleMaps (1.11.1)
+  - SlideMenuControllerSwift (2.0.5)
 
 DEPENDENCIES:
   - AEXML (~> 2.0)
+  - GoogleMaps
+  - SlideMenuControllerSwift (~> 2.0)
 
 SPEC CHECKSUMS:
   AEXML: d6bb5b994521fcf3667ee8ccc1ed533f31b19218
+  GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
+  SlideMenuControllerSwift: 9dcae36265e14c4f42e729f212463beb60d2cf96
 
 COCOAPODS: 0.39.0
